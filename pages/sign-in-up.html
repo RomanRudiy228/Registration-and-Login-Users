@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>&#x26D4;Sign in/up&#x26D4;</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/png" href="pngs/1.png" />
+  </head>
+<body>
+    <div class="container" id="container">
+        <div class="animated-border">
+          <div class="form-container sign-up-container">
+            <form id="signup-form" action="/register" method="post">
+              <h1>Create Account</h1>
+              <span>with</span>
+              <div class="social-container">
+                <a href="https://www.facebook.com" onclick="signInWithFacebook()" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://accounts.google.com/AccountChooser" onclick="signInWithGoogle()" class="social"><i class="fab fa-google"></i></a>
+                <a href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fuas%2Foauth2%2Fauthorization%3Fresponse_type%3Dcode%26client_id%3D123456789%26redirect_uri%3Dhttps%3A%2F%2Fyourwebsite.com%2Fauth%2Flinkedin%26state%3DRANDOM_STATE%26scope%3Dr_liteprofile%20r_emailaddress" onclick="signInWithLinkedIn()" class="social"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <span>or use your email for registration</span>
+              <div class="input-container">
+                <i class="fas fa-user"></i>
+              <input type="text" name="name" id="namesignup" placeholder="Name"/>
+              </div>
+              <div class="error-message" id="nameError">Please enter your name</div>
+              <div class="error-message" id="nameError1">Please enter a valid name</div>
+              <div class="input-container">
+                <i class="fas fa-envelope"></i>
+              <input type="email" name="email" id="emailsignup" placeholder="Email"/>
+                </div>
+              <div class="error-message" id="emailError">Please enter your email</div>
+              <div class="error-message" id="emailError1">Please enter a valid email</div>
+              <div class="input-container">
+                <i class="fas fa-lock"></i>
+                <span class="toggle-password" onclick="togglePassword()">
+                  <img src="pngs/eye.png" alt="Toggle Password Visibility">
+                </span>
+              <input id="passwordInput" name="password" type="password" placeholder="Password" oninput="updatePasswordStrength()"/>
+              <div class="progress">
+                <div class="progress-bar" id="progressBar" ></div>
+              </div>
+              </div>
+              <div class="error-message" id="passwordError">Please enter a password</div>
+              <div class="error-message" id="passwordError1">Please enter a valid email</div>
+              <div id="registrationError" class="error-message"></div>
+              <button type="submit" id="signUp" onclick="validateAndRedirectSignUp()">Sign Up</button>
+            </form>
+          </div>
+          <div class="form-container sign-in-container">
+            <form id="signin-form" action="/login" method="post">
+              <h1>Sign in</h1>
+              <span>with</span>
+              <div class="social-container">
+                <a href="https://www.facebook.com" onclick="signInWithFacebook()" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://accounts.google.com/AccountChooser" onclick="signInWithGoogle()" class="social"><i class="fab fa-google"></i></a>
+                <a href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fuas%2Foauth2%2Fauthorization%3Fresponse_type%3Dcode%26client_id%3D123456789%26redirect_uri%3Dhttps%3A%2F%2Fyourwebsite.com%2Fauth%2Flinkedin%26state%3DRANDOM_STATE%26scope%3Dr_liteprofile%20r_emailaddress" onclick="signInWithLinkedIn()" class="social"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <span>or use your account</span>
+              <input id="emailInputSignIn" name="email" type="email" placeholder="Email"/>
+              <div class="input-container">
+                <i class="fa fa-envelope"></i>
+                </div>
+              <div class="error-message" id="signInEmailError">Please enter your a email</div>
+              <div class="error-message" id="signInEmailError1">Please enter a valid email address</div>
+              <input id="passwordInputSignIn" name="password" type="password" placeholder="Password"/>
+              <div class="input-container">
+                <i class="fas fa-lock"></i>
+                </div>
+                <span class="toggle-password" onclick="togglePassword1()">
+                  <img src="pngs/eye.png" alt="Toggle Password Visibility">
+                </span>
+              <div class="error-message" id="signInPasswordError">Please enter a password</div>
+              <div class="error-message" id="signInPasswordError1">Password must be at least 8 characters long and contain at least one latin letter and one digit</div>
+              <div id="loginError" class="error-message"></div>
+              <a href="#">Forgot your password?</a>
+              <button type="submit" id="signIn" onclick="validateAndRedirect()">Sign In</button>
+            </form>
+          </div>
+          <div class="overlay-container">
+            <div class="overlay">
+              <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>
+                  To keep connected, please login with your personal info
+                </p>
+                <button class="ghost" id="sign-In">Sign In</button>
+              </div>
+              <div class="overlay-panel overlay-right">
+                <h1>Hi, There!</h1>
+                <p>Enter your personal details and start</p>
+                <button class="ghost" id="sign-Up">Sign Up</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="./script.js"></script>
+</body>
+</html>
