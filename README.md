@@ -8,28 +8,28 @@ This repository contains a user registration and login system developed in [HTML
 Registration and login happening at the same page where sides of reg/log are animated.
 
 ## User Registration: 
-    Users can create new accounts using email, password and other required fields.
+ Users can create new accounts using email, password and other required fields.
 ## Login: 
-    Users can login using their registered credentials.
+ Users can login using their registered credentials.
 ## Validation: 
-    Validation of input fields such as email and password verification.
+ Validation of input fields such as email and password verification.
     
    ## Installation
 ## Clone repository:
 
-Copy code: git clone https://github.com/yourusername/your-repository.git
+    git clone https://github.com/RomanRudiy228/Registration-anD-Login-Users.git
 
 ## Go to the project directory:
 
-Copy code: cd Regisration-and-Login-Users
+    cd Regisration-and-Login-Users
 
 ## Configure the database
 
-Copy code: [mongosh, mongod]
+    [mongosh, mongod]
 
 ## Start the server:
 
-Copy code: [node server.js]
+    [node server.js]
 
    ## Using 
 Go to http://localhost:3000/ to create or login an account.
